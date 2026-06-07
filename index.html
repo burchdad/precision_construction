@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Precision Construction Services | Homepage Mock-Up</title>
+  <meta name="description" content="Mock-up concept for a stronger Precision Construction Services homepage.">
+  <style>
+    :root {
+      --ink: #171717;
+      --muted: #5f665f;
+      --paper: #f8f5ef;
+      --white: #ffffff;
+      --green: #233d35;
+      --steel: #2f3437;
+      --copper: #b75f2a;
+      --gold: #d9b36a;
+      --line: #ded8cc;
+      --soft: #ece6da;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .topbar {
+      background: var(--green);
+      color: #f6f0e5;
+      font-size: 14px;
+    }
+
+    .topbar-inner,
+    .nav-inner,
+    .wrap {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 9px 0;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(248, 245, 239, 0.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+    }
+
+    .brand {
+      display: grid;
+      gap: 1px;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .brand strong {
+      font-size: 19px;
+      text-transform: uppercase;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: #3c413d;
+      font-weight: 650;
+      font-size: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 4px;
+      font-weight: 750;
+      border: 1px solid transparent;
+      transition: transform 160ms ease, background 160ms ease;
+      white-space: nowrap;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button.primary {
+      background: var(--copper);
+      color: var(--white);
+    }
+
+    .button.secondary {
+      border-color: rgba(255, 255, 255, 0.55);
+      color: var(--white);
+    }
+
+    .button.dark {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .hero {
+      min-height: calc(100vh - 104px);
+      display: grid;
+      align-items: stretch;
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr);
+      min-height: calc(100vh - 104px);
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 70px max(40px, calc((100vw - 1180px) / 2)) 70px max(40px, calc((100vw - 1180px) / 2));
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      margin-bottom: 18px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 650px;
+      margin-bottom: 22px;
+      font-size: clamp(43px, 6vw, 78px);
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+
+    .hero-copy p {
+      max-width: 620px;
+      color: #e9e2d5;
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .hero-proof {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 620px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      padding-top: 22px;
+    }
+
+    .hero-proof strong {
+      display: block;
+      color: var(--white);
+      font-size: 24px;
+    }
+
+    .hero-proof span {
+      color: #d7cfbf;
+      font-size: 13px;
+    }
+
+    .hero-image {
+      position: relative;
+      min-height: 560px;
+    }
+
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(35, 61, 53, 0.28), rgba(35, 61, 53, 0));
+    }
+
+    section {
+      padding: 86px 0;
+    }
+
+    .intro {
+      background: var(--paper);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(280px, 0.55fr);
+      gap: 50px;
+      align-items: end;
+      margin-bottom: 36px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.02;
+      letter-spacing: 0;
+      margin-bottom: 0;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 0;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .trust-item {
+      padding: 26px;
+      border-right: 1px solid var(--line);
+    }
+
+    .trust-item:last-child {
+      border-right: 0;
+    }
+
+    .trust-item b {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .trust-item span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .services {
+      background: var(--white);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .service {
+      min-height: 218px;
+      padding: 28px;
+      background: #fbfaf7;
+    }
+
+    .service .num {
+      color: var(--copper);
+      font-weight: 850;
+      margin-bottom: 42px;
+    }
+
+    .service h3 {
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .service p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .projects {
+      background: var(--steel);
+      color: var(--white);
+    }
+
+    .projects .lead {
+      color: #d9d4c9;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+    }
+
+    .project-card {
+      background: #1f2426;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .project-card.large {
+      display: grid;
+      grid-template-rows: 430px auto;
+    }
+
+    .project-stack {
+      display: grid;
+      gap: 24px;
+    }
+
+    .project-card.small {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      min-height: 210px;
+    }
+
+    .project-body {
+      padding: 24px;
+    }
+
+    .tag {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      margin-bottom: 10px;
+    }
+
+    .project-body h3 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .project-body p {
+      color: #d8d3ca;
+      margin-bottom: 0;
+    }
+
+    .process {
+      background: var(--paper);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0;
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .step {
+      min-height: 230px;
+      padding: 24px;
+      background: var(--white);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .step strong {
+      display: inline-grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 42px;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .step h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+
+    .testimonial {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .quote-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.75fr) minmax(360px, 0.55fr);
+      gap: 54px;
+      align-items: center;
+    }
+
+    blockquote {
+      margin: 0;
+      font-size: clamp(27px, 4vw, 46px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .quote-layout figcaption {
+      margin-top: 24px;
+      color: #e0d7c8;
+      font-weight: 700;
+    }
+
+    .quote-panel {
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 32px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+    }
+
+    .quote-panel h3 {
+      font-size: 24px;
+      margin-bottom: 14px;
+    }
+
+    .quote-panel p {
+      color: #e0d7c8;
+      margin-bottom: 22px;
+    }
+
+    .cta {
+      background: var(--white);
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(360px, 0.62fr);
+      gap: 50px;
+      align-items: start;
+    }
+
+    .area-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .area-list span {
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #3e443f;
+      background: #fbfaf7;
+      font-weight: 650;
+      font-size: 14px;
+    }
+
+    form {
+      display: grid;
+      gap: 12px;
+      padding: 26px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    label {
+      display: grid;
+      gap: 6px;
+      color: #343a35;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 44px;
+      border: 1px solid #cfc7b8;
+      border-radius: 4px;
+      background: var(--white);
+      padding: 11px 12px;
+      color: var(--ink);
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 96px;
+      resize: vertical;
+    }
+
+    .footer {
+      background: #171717;
+      color: #eee7da;
+      padding: 34px 0;
+    }
+
+    .footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links a:not(.button) {
+        display: none;
+      }
+
+      .hero-grid,
+      .section-head,
+      .project-grid,
+      .quote-layout,
+      .cta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 0;
+      }
+
+      .hero-grid {
+        min-height: 0;
+      }
+
+      .hero-copy {
+        padding: 56px 28px;
+      }
+
+      .hero-image {
+        min-height: 390px;
+        order: -1;
+      }
+
+      .trust-grid,
+      .service-grid,
+      .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .project-card.small {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card.small img {
+        height: 250px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .topbar-inner {
+        display: grid;
+      }
+
+      .brand strong {
+        font-size: 16px;
+      }
+
+      .nav-links .button {
+        min-height: 40px;
+        padding: 0 12px;
+        font-size: 13px;
+      }
+
+      .hero-proof,
+      .trust-grid,
+      .service-grid,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      section {
+        padding: 62px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span>Residential general contractor serving Tyler, Flint, Whitehouse, Bullard, and surrounding East Texas.</span>
+      <a href="tel:+19039203696">(903) 920-3696</a>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#">
+        <strong>Precision Construction</strong>
+        <span>Services LLC</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#process">Process</a>
+        <a href="#contact" class="button dark">Request Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Tyler Area Remodels, Additions, Patios and Custom Builds</div>
+          <h1>Quality construction without the chaos.</h1>
+          <p>Precision Construction Services helps East Texas homeowners remodel, expand, and improve their homes with clear communication, skilled trades, and a cleaner building experience.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#contact">Request a Consultation</a>
+            <a class="button secondary" href="#projects">View Recent Projects</a>
+          </div>
+          <div class="hero-proof" aria-label="Trust highlights">
+            <div><strong>20+</strong><span>years in construction</span></div>
+            <div><strong>Local</strong><span>Tyler-area contractor</span></div>
+            <div><strong>Clean</strong><span>respectful job sites</span></div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://precisionconstructionservicesllc.com/projects/custombarn/IMG_6153.jpeg" alt="Custom barn project by Precision Construction Services in Bullard, Texas">
+        </div>
+      </div>
+    </section>
+
+    <section class="intro">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>A better experience before, during, and after the build.</h2>
+          <p class="lead">The best contractors do more than finish the project. They protect the homeowner from confusion, avoidable stress, and surprise decisions.</p>
+        </div>
+        <div class="trust-grid">
+          <div class="trust-item">
+            <b>Clear communication</b>
+            <span>Know what is happening, what is next, and who is responsible.</span>
+          </div>
+          <div class="trust-item">
+            <b>Trusted trade partners</b>
+            <span>Skilled, courteous professionals coordinated by an experienced GC.</span>
+          </div>
+          <div class="trust-item">
+            <b>Budget-aware planning</b>
+            <span>Practical options and realistic expectations before work begins.</span>
+          </div>
+          <div class="trust-item">
+            <b>Craftsmanship that lasts</b>
+            <span>Details, materials, and finishes handled with pride.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Built for the projects homeowners actually need.</h2>
+          <p class="lead">From master suites to outdoor living, the site should make services clear instead of asking visitors to decode them from the project archive.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service">
+            <div class="num">01</div>
+            <h3>Remodels and interiors</h3>
+            <p>Master suites, bathrooms, kitchens, guest houses, and full interior updates.</p>
+          </article>
+          <article class="service">
+            <div class="num">02</div>
+            <h3>Additions and expansions</h3>
+            <p>New living areas, expanded porches, attached structures, and room additions.</p>
+          </article>
+          <article class="service">
+            <div class="num">03</div>
+            <h3>Outdoor living</h3>
+            <p>Covered patios, poolside spaces, decks, pergolas, fire pits, and porches.</p>
+          </article>
+          <article class="service">
+            <div class="num">04</div>
+            <h3>Barns and workshops</h3>
+            <p>Custom barns, workshops, man caves, and specialty structures.</p>
+          </article>
+          <article class="service">
+            <div class="num">05</div>
+            <h3>Exterior updates</h3>
+            <p>Siding, porch roofs, trim details, posts, railings, and curb appeal upgrades.</p>
+          </article>
+          <article class="service">
+            <div class="num">06</div>
+            <h3>Project coordination</h3>
+            <p>Planning, trade scheduling, material coordination, and final walkthroughs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Project proof, reframed as a sales story.</h2>
+          <p class="lead">Instead of only showing photos, the new project section should explain the homeowner problem, the work completed, and the result.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card large">
+            <img src="https://precisionconstructionservicesllc.com/projects/backporchwithpergolas/IMG_6311.jpg" alt="Covered back porch and poolside outdoor living project">
+            <div class="project-body">
+              <div class="tag">Outdoor Living | Back Porch Addition</div>
+              <h3>Poolside entertaining space with brick, wood, and shade.</h3>
+              <p>A covered back porch that feels connected to the existing home and creates a more comfortable place to gather.</p>
+            </div>
+          </article>
+          <div class="project-stack">
+            <article class="project-card small">
+              <img src="https://precisionconstructionservicesllc.com/projects/masterbedandbath/thumbnail_image4.jpg" alt="Master suite remodel by Precision Construction Services">
+              <div class="project-body">
+                <div class="tag">Interior Remodel</div>
+                <h3>Master suite renovation</h3>
+                <p>Coordinated trades, guided decisions, and delivered a smoother renovation experience.</p>
+              </div>
+            </article>
+            <article class="project-card small">
+              <img src="https://precisionconstructionservicesllc.com/projects/custombarn/IMG_6153.jpeg" alt="Custom barn in Bullard, Texas">
+              <div class="project-body">
+                <div class="tag">Custom Structure</div>
+                <h3>Bullard custom barn</h3>
+                <p>A large-scale specialty build that shows Precision can handle more than standard remodels.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>A simple process homeowners can trust.</h2>
+          <p class="lead">The current testimonials sell the process. The new website should make that process visible before the first call.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <strong>1</strong>
+            <h3>Consult</h3>
+            <p>Talk through the project, goals, concerns, timeline, and budget range.</p>
+          </article>
+          <article class="step">
+            <strong>2</strong>
+            <h3>Plan</h3>
+            <p>Define scope, materials, trade needs, and practical paths forward.</p>
+          </article>
+          <article class="step">
+            <strong>3</strong>
+            <h3>Coordinate</h3>
+            <p>Bring in the right trade partners and schedule work clearly.</p>
+          </article>
+          <article class="step">
+            <strong>4</strong>
+            <h3>Build</h3>
+            <p>Manage the work, communicate updates, and respect the property.</p>
+          </article>
+          <article class="step">
+            <strong>5</strong>
+            <h3>Walk through</h3>
+            <p>Review the finished work and make sure the details are right.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonial">
+      <div class="wrap quote-layout">
+        <figure>
+          <blockquote>"From start to finish, he was honest, reliable, and an exceptional communicator."</blockquote>
+          <figcaption>Ryan and Tori Ford, Flint, TX</figcaption>
+        </figure>
+        <div class="quote-panel">
+          <h3>The site should sell what clients already say.</h3>
+          <p>Precision's reviews repeatedly mention communication, trust, quality trades, budget awareness, and respect for the home. Those are not side notes. They are the brand.</p>
+          <a class="button primary" href="#contact">Start Your Project</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="wrap cta-grid">
+        <div>
+          <div class="eyebrow">Ready to make the next step easier?</div>
+          <h2>Request a consultation for your remodel, addition, or outdoor living project.</h2>
+          <p class="lead">A short form lets interested homeowners reach out even when they are not ready to call. This is one of the biggest conversion upgrades for the new site.</p>
+          <div class="area-list" aria-label="Service area">
+            <span>Tyler</span>
+            <span>Flint</span>
+            <span>Whitehouse</span>
+            <span>Bullard</span>
+            <span>Larue</span>
+            <span>East Texas</span>
+          </div>
+        </div>
+        <form>
+          <label>Name
+            <input type="text" placeholder="Your name">
+          </label>
+          <label>Phone
+            <input type="tel" placeholder="(903) 000-0000">
+          </label>
+          <label>Project type
+            <select>
+              <option>Remodel or interior update</option>
+              <option>Addition or expansion</option>
+              <option>Covered patio or outdoor living</option>
+              <option>Barn, workshop, or custom structure</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
+          <label>Project notes
+            <textarea placeholder="Tell us what you are hoping to build or improve."></textarea>
+          </label>
+          <button class="button dark" type="button">Send Consultation Request</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <strong>Precision Construction Services LLC</strong>
+      <span>Mock-up concept for client conversion pitch</span>
+    </div>
+  </footer>
+</body>
+</html>
