@@ -12,6 +12,7 @@
       --paper: #f8f5ef;
       --white: #ffffff;
       --green: #233d35;
+      --deep: #162d27;
       --steel: #2f3437;
       --copper: #b75f2a;
       --gold: #d9b36a;
@@ -52,7 +53,7 @@
     .topbar-inner,
     .nav-inner,
     .wrap {
-      width: min(1180px, calc(100% - 40px));
+      width: min(1560px, calc(100% - 64px));
       margin: 0 auto;
     }
 
@@ -109,8 +110,8 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 46px;
-      padding: 0 18px;
+      min-height: 52px;
+      padding: 0 22px;
       border-radius: 4px;
       font-weight: 750;
       border: 1px solid transparent;
@@ -141,21 +142,26 @@
       min-height: calc(100vh - 104px);
       display: grid;
       align-items: stretch;
-      background: var(--green);
+      background:
+        radial-gradient(circle at 12% 12%, rgba(217, 179, 106, 0.16), transparent 28%),
+        linear-gradient(135deg, var(--deep), var(--green));
       color: var(--white);
+      overflow: hidden;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr);
+      grid-template-columns: minmax(520px, 0.72fr) minmax(0, 1.28fr);
       min-height: calc(100vh - 104px);
     }
 
     .hero-copy {
+      position: relative;
+      z-index: 2;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 70px max(40px, calc((100vw - 1180px) / 2)) 70px max(40px, calc((100vw - 1180px) / 2));
+      padding: clamp(72px, 8vw, 132px) clamp(32px, 4.8vw, 90px) clamp(72px, 8vw, 132px) clamp(42px, 7vw, 132px);
     }
 
     .eyebrow {
@@ -175,17 +181,17 @@
     }
 
     h1 {
-      max-width: 650px;
-      margin-bottom: 22px;
-      font-size: clamp(43px, 6vw, 78px);
-      line-height: 0.96;
+      max-width: 900px;
+      margin-bottom: 28px;
+      font-size: clamp(58px, 7.8vw, 124px);
+      line-height: 0.88;
       letter-spacing: 0;
     }
 
     .hero-copy p {
-      max-width: 620px;
+      max-width: 720px;
       color: #e9e2d5;
-      font-size: 20px;
+      font-size: clamp(20px, 1.35vw, 27px);
       margin-bottom: 30px;
     }
 
@@ -199,16 +205,25 @@
     .hero-proof {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      max-width: 620px;
-      border-top: 1px solid rgba(255, 255, 255, 0.18);
-      padding-top: 22px;
+      gap: 14px;
+      max-width: 760px;
+      padding-top: 18px;
+    }
+
+    .hero-proof div {
+      min-height: 106px;
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 8px;
     }
 
     .hero-proof strong {
       display: block;
       color: var(--white);
-      font-size: 24px;
+      font-size: clamp(28px, 2.4vw, 44px);
+      line-height: 1;
+      margin-bottom: 8px;
     }
 
     .hero-proof span {
@@ -218,18 +233,86 @@
 
     .hero-image {
       position: relative;
-      min-height: 560px;
+      min-height: calc(100vh - 104px);
+      isolation: isolate;
     }
 
     .hero-image::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, rgba(35, 61, 53, 0.28), rgba(35, 61, 53, 0));
+      z-index: 1;
+      background:
+        linear-gradient(90deg, rgba(22, 45, 39, 0.42), rgba(22, 45, 39, 0.04) 34%, rgba(0, 0, 0, 0.12)),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.32), transparent 38%);
+    }
+
+    .hero-image img {
+      object-position: center;
+      transform: scale(1.015);
+    }
+
+    .project-ribbon {
+      position: absolute;
+      right: clamp(24px, 4vw, 70px);
+      bottom: clamp(24px, 4vw, 70px);
+      z-index: 2;
+      width: min(430px, calc(100% - 48px));
+      padding: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(22, 45, 39, 0.82);
+      color: #f8f1e6;
+      backdrop-filter: blur(14px);
+      border-radius: 8px;
+    }
+
+    .project-ribbon b {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    .project-ribbon span {
+      display: block;
+      font-size: 21px;
+      font-weight: 800;
+      line-height: 1.12;
+    }
+
+    .impact-band {
+      background: var(--copper);
+      color: var(--white);
+      padding: 0;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      width: min(1560px, calc(100% - 64px));
+      margin: 0 auto;
+      border-left: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .impact-item {
+      padding: 26px 28px;
+      border-right: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .impact-item strong {
+      display: block;
+      font-size: 21px;
+      margin-bottom: 3px;
+    }
+
+    .impact-item span {
+      color: #ffe7d7;
+      font-size: 14px;
     }
 
     section {
-      padding: 86px 0;
+      padding: clamp(88px, 8vw, 140px) 0;
     }
 
     .intro {
@@ -239,21 +322,21 @@
     .section-head {
       display: grid;
       grid-template-columns: minmax(0, 0.8fr) minmax(280px, 0.55fr);
-      gap: 50px;
+      gap: 80px;
       align-items: end;
-      margin-bottom: 36px;
+      margin-bottom: 54px;
     }
 
     h2 {
-      font-size: clamp(32px, 4vw, 52px);
-      line-height: 1.02;
+      font-size: clamp(40px, 5.2vw, 76px);
+      line-height: 0.94;
       letter-spacing: 0;
       margin-bottom: 0;
     }
 
     .lead {
       color: var(--muted);
-      font-size: 18px;
+      font-size: clamp(18px, 1.2vw, 22px);
       margin-bottom: 0;
     }
 
@@ -265,7 +348,8 @@
     }
 
     .trust-item {
-      padding: 26px;
+      min-height: 190px;
+      padding: 34px;
       border-right: 1px solid var(--line);
     }
 
@@ -276,7 +360,7 @@
     .trust-item b {
       display: block;
       margin-bottom: 8px;
-      font-size: 18px;
+      font-size: 22px;
     }
 
     .trust-item span {
@@ -285,7 +369,9 @@
     }
 
     .services {
-      background: var(--white);
+      background:
+        linear-gradient(90deg, rgba(183, 95, 42, 0.06), transparent 28%),
+        var(--white);
     }
 
     .service-grid {
@@ -297,8 +383,8 @@
     }
 
     .service {
-      min-height: 218px;
-      padding: 28px;
+      min-height: 270px;
+      padding: 34px;
       background: #fbfaf7;
     }
 
@@ -309,7 +395,8 @@
     }
 
     .service h3 {
-      font-size: 23px;
+      font-size: 30px;
+      line-height: 1;
       margin-bottom: 10px;
     }
 
@@ -319,8 +406,14 @@
     }
 
     .projects {
-      background: var(--steel);
+      background:
+        radial-gradient(circle at 80% 10%, rgba(217, 179, 106, 0.18), transparent 24%),
+        var(--steel);
       color: var(--white);
+    }
+
+    .projects .wrap {
+      width: min(1620px, calc(100% - 64px));
     }
 
     .projects .lead {
@@ -329,8 +422,8 @@
 
     .project-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 24px;
+      grid-template-columns: minmax(0, 1.4fr) minmax(420px, 0.6fr);
+      gap: 30px;
     }
 
     .project-card {
@@ -342,7 +435,7 @@
 
     .project-card.large {
       display: grid;
-      grid-template-rows: 430px auto;
+      grid-template-rows: clamp(460px, 42vw, 690px) auto;
     }
 
     .project-stack {
@@ -352,12 +445,12 @@
 
     .project-card.small {
       display: grid;
-      grid-template-columns: 190px 1fr;
-      min-height: 210px;
+      grid-template-columns: minmax(190px, 0.48fr) 1fr;
+      min-height: 260px;
     }
 
     .project-body {
-      padding: 24px;
+      padding: clamp(24px, 2.4vw, 38px);
     }
 
     .tag {
@@ -370,7 +463,8 @@
     }
 
     .project-body h3 {
-      font-size: 25px;
+      font-size: clamp(26px, 2.4vw, 42px);
+      line-height: 1;
       margin-bottom: 10px;
     }
 
@@ -392,8 +486,8 @@
     }
 
     .step {
-      min-height: 230px;
-      padding: 24px;
+      min-height: 300px;
+      padding: 32px;
       background: var(--white);
       border-right: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
@@ -435,7 +529,7 @@
 
     blockquote {
       margin: 0;
-      font-size: clamp(27px, 4vw, 46px);
+      font-size: clamp(40px, 5.4vw, 82px);
       line-height: 1.08;
       letter-spacing: 0;
     }
@@ -448,7 +542,7 @@
 
     .quote-panel {
       border: 1px solid rgba(255, 255, 255, 0.18);
-      padding: 32px;
+      padding: 44px;
       background: rgba(255, 255, 255, 0.06);
       border-radius: 8px;
     }
@@ -469,8 +563,8 @@
 
     .cta-grid {
       display: grid;
-      grid-template-columns: minmax(0, 0.85fr) minmax(360px, 0.62fr);
-      gap: 50px;
+      grid-template-columns: minmax(0, 1fr) minmax(420px, 0.52fr);
+      gap: 84px;
       align-items: start;
     }
 
@@ -494,7 +588,7 @@
     form {
       display: grid;
       gap: 12px;
-      padding: 26px;
+      padding: 34px;
       background: var(--paper);
       border: 1px solid var(--line);
       border-radius: 8px;
@@ -571,6 +665,7 @@
 
       .trust-grid,
       .service-grid,
+      .impact-grid,
       .steps {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -602,6 +697,7 @@
       .hero-proof,
       .trust-grid,
       .service-grid,
+      .impact-grid,
       .steps {
         grid-template-columns: 1fr;
       }
@@ -659,6 +755,31 @@
         </div>
         <div class="hero-image">
           <img src="https://precisionconstructionservicesllc.com/projects/custombarn/IMG_6153.jpeg" alt="Custom barn project by Precision Construction Services in Bullard, Texas">
+          <div class="project-ribbon">
+            <b>Featured build</b>
+            <span>Custom barn in Bullard, built with the same care homeowners expect inside the house.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact-band" aria-label="Conversion highlights">
+      <div class="impact-grid">
+        <div class="impact-item">
+          <strong>Real project photography</strong>
+          <span>No stock look. The work is the visual proof.</span>
+        </div>
+        <div class="impact-item">
+          <strong>Trust-led messaging</strong>
+          <span>Communication, budget clarity, and clean job sites lead the sale.</span>
+        </div>
+        <div class="impact-item">
+          <strong>Clear service paths</strong>
+          <span>Remodels, additions, outdoor living, barns, and workshops.</span>
+        </div>
+        <div class="impact-item">
+          <strong>Lead capture built in</strong>
+          <span>A consultation form for homeowners who are not ready to call.</span>
         </div>
       </div>
     </section>
