@@ -81,20 +81,40 @@
     }
 
     .brand {
-      display: grid;
-      gap: 1px;
-      line-height: 1;
-      letter-spacing: 0;
+      display: inline-flex;
+      align-items: center;
+      color: #18191d;
     }
 
-    .brand strong {
-      font-size: 19px;
-      text-transform: uppercase;
+    .logo-mark {
+      display: block;
+      width: min(360px, 42vw);
+      height: auto;
     }
 
-    .brand span {
-      color: var(--muted);
-      font-size: 13px;
+    .hero-logo {
+      width: min(520px, 78vw);
+      margin-bottom: 34px;
+      color: #f8f1e6;
+      filter: drop-shadow(0 22px 36px rgba(0, 0, 0, 0.24));
+    }
+
+    .logo-mark .logo-sub,
+    .logo-mark .logo-main,
+    .logo-mark .logo-rule,
+    .logo-mark .logo-tick,
+    .hero-logo .logo-sub,
+    .hero-logo .logo-main,
+    .hero-logo .logo-rule,
+    .hero-logo .logo-tick {
+      fill: currentColor;
+      stroke: none;
+    }
+
+    .logo-mark .logo-saw,
+    .hero-logo .logo-saw {
+      fill: none;
+      stroke: currentColor;
     }
 
     .nav-links {
@@ -688,6 +708,10 @@
         font-size: 16px;
       }
 
+      .logo-mark {
+        width: 220px;
+      }
+
       .nav-links .button {
         min-height: 40px;
         padding: 0 12px;
@@ -723,9 +747,21 @@
 
   <header class="nav">
     <div class="nav-inner">
-      <a class="brand" href="#">
-        <strong>Precision Construction</strong>
-        <span>Services LLC</span>
+      <a class="brand" href="#" aria-label="Precision Construction Services home">
+        <svg class="logo-mark" viewBox="0 0 900 170" role="img" aria-label="Precision Construction Services">
+          <defs>
+            <pattern id="navTicks" width="8" height="18" patternUnits="userSpaceOnUse">
+              <rect class="logo-tick" x="0" y="0" width="3" height="18"></rect>
+            </pattern>
+          </defs>
+          <circle class="logo-saw" cx="58" cy="78" r="38" fill="none" stroke-width="18"></circle>
+          <path class="logo-saw" d="M91 35l14 11" fill="none" stroke-width="6" stroke-linecap="round"></path>
+          <text class="logo-main" x="132" y="82" font-family="Arial Black, Impact, sans-serif" font-size="74" font-weight="900">PRECISION</text>
+          <rect class="logo-rule" x="92" y="104" width="760" height="8"></rect>
+          <rect x="92" y="87" width="760" height="22" fill="url(#navTicks)"></rect>
+          <rect class="logo-rule" x="848" y="94" width="8" height="36"></rect>
+          <text class="logo-sub" x="132" y="151" font-family="Arial Black, Impact, sans-serif" font-size="43" font-weight="900">CONSTRUCTION SERVICES</text>
+        </svg>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#services">Services</a>
@@ -740,6 +776,20 @@
     <section class="hero">
       <div class="hero-grid">
         <div class="hero-copy">
+          <svg class="hero-logo" viewBox="0 0 900 170" role="img" aria-label="Precision Construction Services">
+            <defs>
+              <pattern id="heroTicks" width="8" height="18" patternUnits="userSpaceOnUse">
+                <rect class="logo-tick" x="0" y="0" width="3" height="18"></rect>
+              </pattern>
+            </defs>
+            <circle class="logo-saw" cx="58" cy="78" r="38" fill="none" stroke-width="18"></circle>
+            <path class="logo-saw" d="M91 35l14 11" fill="none" stroke-width="6" stroke-linecap="round"></path>
+            <text class="logo-main" x="132" y="82" font-family="Arial Black, Impact, sans-serif" font-size="74" font-weight="900">PRECISION</text>
+            <rect class="logo-rule" x="92" y="104" width="760" height="8"></rect>
+            <rect x="92" y="87" width="760" height="22" fill="url(#heroTicks)"></rect>
+            <rect class="logo-rule" x="848" y="94" width="8" height="36"></rect>
+            <text class="logo-sub" x="132" y="151" font-family="Arial Black, Impact, sans-serif" font-size="43" font-weight="900">CONSTRUCTION SERVICES</text>
+          </svg>
           <div class="eyebrow">Tyler Area Remodels, Additions, Patios and Custom Builds</div>
           <h1>Quality construction without the chaos.</h1>
           <p>Precision Construction Services helps East Texas homeowners remodel, expand, and improve their homes with clear communication, skilled trades, and a cleaner building experience.</p>
