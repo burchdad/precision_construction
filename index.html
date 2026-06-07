@@ -88,13 +88,13 @@
 
     .logo-mark {
       display: block;
-      width: min(360px, 42vw);
+      width: min(430px, 42vw);
       height: auto;
     }
 
     .hero-logo {
-      width: min(520px, 78vw);
-      margin-bottom: 34px;
+      width: min(660px, 86vw);
+      margin-bottom: 38px;
       color: #f8f1e6;
       filter: drop-shadow(0 22px 36px rgba(0, 0, 0, 0.24));
     }
@@ -171,7 +171,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(520px, 0.72fr) minmax(0, 1.28fr);
+      grid-template-columns: minmax(600px, 0.86fr) minmax(0, 1.14fr);
       min-height: calc(100vh - 104px);
     }
 
@@ -181,7 +181,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: clamp(72px, 8vw, 132px) clamp(32px, 4.8vw, 90px) clamp(72px, 8vw, 132px) clamp(42px, 7vw, 132px);
+      padding: clamp(72px, 8vw, 132px) clamp(44px, 4.8vw, 96px) clamp(72px, 8vw, 132px) clamp(48px, 7vw, 132px);
     }
 
     .eyebrow {
@@ -201,17 +201,17 @@
     }
 
     h1 {
-      max-width: 900px;
+      max-width: 720px;
       margin-bottom: 28px;
-      font-size: clamp(58px, 7.8vw, 124px);
-      line-height: 0.88;
+      font-size: clamp(56px, 6.35vw, 104px);
+      line-height: 0.9;
       letter-spacing: 0;
     }
 
     .hero-copy p {
-      max-width: 720px;
+      max-width: 620px;
       color: #e9e2d5;
-      font-size: clamp(20px, 1.35vw, 27px);
+      font-size: clamp(20px, 1.18vw, 24px);
       margin-bottom: 30px;
     }
 
@@ -226,7 +226,7 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
-      max-width: 760px;
+      max-width: 650px;
       padding-top: 18px;
     }
 
@@ -255,6 +255,7 @@
       position: relative;
       min-height: calc(100vh - 104px);
       isolation: isolate;
+      box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.18);
     }
 
     .hero-image::after {
@@ -268,7 +269,7 @@
     }
 
     .hero-image img {
-      object-position: center;
+      object-position: center center;
       transform: scale(1.015);
     }
 
@@ -678,6 +679,15 @@
         padding: 56px 28px;
       }
 
+      .hero-logo {
+        width: min(520px, 86vw);
+      }
+
+      h1 {
+        max-width: 760px;
+        font-size: clamp(48px, 12vw, 86px);
+      }
+
       .hero-image {
         min-height: 390px;
         order: -1;
@@ -709,13 +719,21 @@
       }
 
       .logo-mark {
-        width: 220px;
+        width: 230px;
       }
 
       .nav-links .button {
         min-height: 40px;
         padding: 0 12px;
         font-size: 13px;
+      }
+
+      .nav-inner {
+        gap: 16px;
+      }
+
+      .hero-actions .button {
+        width: 100%;
       }
 
       .hero-proof,
